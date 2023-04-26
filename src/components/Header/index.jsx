@@ -10,6 +10,8 @@ const Header = () => {
 
       <h1 className='title'>La bibliothèque fantastique de Maggie</h1>
 
+      <p>Texte en test</p>
+
 
     </header>
   );
