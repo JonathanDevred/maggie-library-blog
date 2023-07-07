@@ -1,10 +1,10 @@
 import express from 'express';
-import { pool } from '../server'; 
+import { pool } from '../server.js'; 
 
 const tagsRoutes = express.Router();
 
 // Route pour récupérer tous les tags
-tagsRoutes.get('/tags', (req, res) => {
+tagsRoutes.get('/', (req, res) => {
   pool.query('SELECT * FROM tags', (error, results) => {
     if (error) {
       console.error('Erreur lors de la récupération des tags', error);
@@ -16,7 +16,7 @@ tagsRoutes.get('/tags', (req, res) => {
 });
 
 // Route pour récupérer les tags par nom
-tagsRoutes.get('/tags/:name', (req, res) => {
+tagsRoutes.get('/:name', (req, res) => {
   const tagName = req.params.name;
   pool.query('SELECT * FROM tags WHERE name = $1', [tagName], (error, results) => {
     if (error) {
