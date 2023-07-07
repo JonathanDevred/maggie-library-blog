@@ -1,10 +1,10 @@
 import express from 'express';
 import pg from 'pg';
 
-import articlesRoutes from './routes/articles';
-import tagsRoutes from './routes/tags';
-import usersRoutes from './routes/users';   
-import commentsRoutes from './routes/comments';
+import articlesRoutes from './routes/articles.js';
+import tagsRoutes from './routes/tags.js';
+import usersRoutes from './routes/users.js';   
+import commentsRoutes from './routes/comments.js';
 
 
 const app = express();
@@ -33,3 +33,5 @@ app.use('/comments', commentsRoutes);
 app.listen(port, () => {
   console.log(`Serveur démarré sur  http://localhost:${port}`);
 });
+    
+export { pool };    
